@@ -28,10 +28,10 @@ class Particle(Robot1D):
 
 # Plot Weights for a list of robot measurements.
 particle = Particle(0.0)
+
 x = np.arange(-5, 5, 0.01)  # robot measurements
 y = np.zeros(len(x))
 for i in range(len(x)):
-    particle.weight_update(x[i])
     y[i] = particle.probability_density_function(0, x[i])
 
 plt.plot(x, y, '-r')
